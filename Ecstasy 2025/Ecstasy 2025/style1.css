@@ -1,0 +1,307 @@
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color: #fff;
+}
+
+body {
+    overflow-x: hidden;
+    background: #0f172a;
+    /* position: relative; */
+}
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background: #95c11e;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+  }
+/* Navigation - refactored common styles */
+#nav, #nav .nav-links {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: fixed;
+    justify-content: flex-start;
+    z-index: 999;
+}
+#nav {
+    padding: 0 410px;
+}
+#nav .nav-links {
+    padding: 0 110px;
+}
+
+#nav a {
+    text-decoration: none;
+}
+#nav img {
+    height: 4.5vw;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.15vw;
+}
+
+/* Video Background */
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.39);
+  }
+/* Team Section */
+.team-content {
+    padding: 5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.team-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    margin-top: 130px;
+    margin-bottom: 150px;
+}
+
+.team-member {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-member:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Add these new styles */
+.member-image {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.1) rotateY(10deg);
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(150, 237, 58, 0.696);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+    transform-style: preserve-3d;
+}
+
+.team-member:hover .member-overlay {
+    opacity: 1;
+    transform: translateY(0) rotateX(5deg);
+}
+
+.social-icon {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 9999px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.social-icon:hover {
+    background-color: white;
+    /* color: #7c3aed; */
+    color: #95c11e;
+    transform: translateZ(20px);
+}
+
+.team-member h3 {
+    font-size: 1.25rem;
+    margin: 1rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.member-role {
+    /* color: #7c3aed; */
+    color: #95c11e;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.member-desc {
+    color: #d1d5db;
+    text-align: center;
+    margin: 0 1rem 1rem;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 33;
+    -webkit-box-orient: vertical;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    video {
+        object-fit: cover; 
+        top: 0;
+        left: 0px;
+        width: 100%;
+        height: 100vh;
+        z-index: -1; 
+      }
+    #nav {
+        padding: 0 20px;
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        position: relative;
+        background-color: transparent;
+    }
+
+    #nav .nav-links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        align-items: center;
+        position: static;
+        height: auto;
+        gap: 0px;
+    }
+    #nav .nav-links a {
+        padding: 1rem; 
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    #nav img {
+        height: 8vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    #nav h4 {
+        font-size: 2.5vw;
+        text-align: left;
+        width: 100%;
+        /* padding: 10px; */
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .team-member h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .member-desc {
+        font-size: 1rem;
+    }
+    .member-overlay {
+        flex-direction: column; 
+        gap: 0.5rem;
+    }
+    .social-icon {
+        padding: 0.5rem 0.6rem; 
+        font-size: 0.5rem;
+    }
+
+    .team-member:hover .member-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #nav .hamburger {
+            display: block; 
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+        }
+        
+    #nav .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+    #nav .nav-active {
+            display: flex;
+            flex-direction: column; 
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 998; 
+            width: fit-content;
+        }
+        
+     #nav  .nav-active a {
+            padding: 1rem;
+            text-align: center;
+        }
+}

@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color: #fff;
+  }
+  *::selection {
+    background-color: #fff;
+    color: #95c11e;
+  }
+  html,body {
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+  }
+  body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background: #95c11e;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+  }
+  /* Navigation Bar */
+  #nav, #nav .nav-links {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: fixed;
+    justify-content: flex-start;
+    z-index: 999;
+  }
+  #nav {
+    padding: 0 410px;
+  }
+  #nav .nav-links {
+    padding: 0 110px;
+  }
+  #nav a {
+    text-decoration: none;
+  }
+  #nav img {
+    height: 4.5vw;
+  }
+  #nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.15vw;
+  }
+  
+  /* Background Video */
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* Main Content */
+  #main {
+    position: relative;
+    margin-top: 150px;
+    padding: 40px 20px;
+  }
+  
+  /* Page 1 - Header */
+  #page1 {
+    margin-bottom: 50px;
+  }
+  
+  #page1 h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #page1 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  #page1 p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.5;
+  }
+  
+  /* Merchandise Cards */
+  #cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin-top: 150px;
+    
+  }
+  
+  .card {
+    width: 320px;
+    height: 420px;
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  }
+  .card-image {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    display: block;
+}
+  .overlay {
+    padding: 20px;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+  }
+  
+  .overlay h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .overlay p {
+    font-size: 0.8rem;
+    color: #ccc;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .merch-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+  }
+  
+  #cards-container .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #95c11e;
+  }
+  
+  .merch-btn {
+    background-color: #95c11e;
+    color: black;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none; 
+    display: inline-block;
+  }
+  
+  .merch-btn:hover {
+    background-color: white;
+  }
+  
+  /* Product Gallery */
+  #page4 {
+    margin-top: 50px;
+    margin-bottom: 200px;
+  }
+  
+  #page4 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .elem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    /* gap: 200px; */
+    margin-top: 100px;
+  }
+  
+  .elem h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .elem img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  }
+  /* new */
+  .banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .banner .slider{
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+  }
+  @keyframes autoRun{
+    from{
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    to{
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+  .banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+  }
+  .banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* new */
+  
+  @media (max-width: 768px) {
+    #cursor {
+      display: none;
+  }
+  #cursor-blur {
+      display: none;
+  }
+  video {
+    object-fit: cover; 
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; 
+  }
+    #nav {
+        padding: 0 20px;
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        position: relative;
+        background-color: transparent;
+    }
+
+    #nav .nav-links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+        align-items: center;
+        position: static;
+        height: auto;
+        gap: 0px;
+    }
+    #nav .nav-links a {
+        padding: 1rem; 
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    #nav img {
+        height: 8vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    #nav h4 {
+        font-size: 2.5vw;
+        text-align: left;
+        width: 100%;
+        /* padding: 2px; */
+    }
+    #nav .hamburger {
+      display: block; 
+      cursor: pointer;
+      position: absolute;
+      top: 1.5rem;
+      right: 1rem;
+      z-index: 1000;
+  }
+  
+#nav .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: all 0.3s ease-in-out;
+  }
+#nav .nav-active {
+      display: flex;
+      flex-direction: column; 
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 998; 
+      width: fit-content; 
+  }
+  
+#nav  .nav-active a {
+      padding: 1rem;
+      text-align: center;
+  }
+
+  #main {
+    margin-top: 80px; 
+    padding: 2rem; 
+}
+#page1 {
+  margin-bottom: 3rem; 
+}
+#page1 h1 {
+  font-size: 2.5rem; 
+  margin-bottom: 0.5rem; 
+}
+#page1 h2 {
+  font-size: 1.5rem; 
+  margin-bottom: 1rem; 
+}
+#page1 p {
+  font-size: 1rem;
+}
+#cards-container {
+  gap: 5rem;
+  margin-top: 2rem;
+}
+.card {
+  width: 90%; 
+  height: auto; 
+}
+.card-image {
+  height: 200px; 
+}
+.overlay {
+  padding: 1rem;
+}
+.overlay h4 {
+  font-size: 1.5rem; 
+  margin-bottom: 0.5rem; 
+}
+.overlay p {
+  font-size: 0.9rem; 
+  margin-bottom: 1rem;
+}
+.merch-details {
+  margin-top: 0.5rem;
+}
+#cards-container .price {
+  font-size: 1rem; 
+  color: #95c11e;
+}
+.merch-btn {
+  padding: 0.5rem 1rem; 
+}
+#page4 {
+  margin-top: 3rem;
+}
+#page4 h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.elem {
+  margin-bottom: 2rem;
+}
+.elem h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.elem img {
+  width: 200px;
+}
+
+  }

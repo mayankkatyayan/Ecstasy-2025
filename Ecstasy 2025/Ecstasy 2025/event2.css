@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+*::selection {
+  background-color: #fff;
+  color: #95c11e;
+}
+
+body::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+  background: #95c11e;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 50px;
+}
+body {
+  overflow-x: hidden;
+}
+#cursor {
+  height: 20px;
+  width: 20px;
+  background-color: #95c11e;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+  transition: all linear 0.1s;
+}
+#cursor-blur {
+  height: 500px;
+  width: 500px;
+  background-color: rgba(150, 193, 30, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  filter: blur(80px);
+  z-index: 9;
+  transition: all linear 0.4s;
+  display: none;
+}
+
+#nav, #nav .nav-links {
+  height: 130px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: fixed;
+  justify-content: flex-start;
+  z-index: 999;
+}
+#nav .nav-links {
+padding: 0 110px;
+}
+
+#nav {
+padding: 0 410px;
+}
+#nav a{
+  text-decoration: none;
+}
+#nav img {
+  height: 4.5vw;
+}
+#nav h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.15vw;
+}
+
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  position: fixed;
+  background-size: cover;
+}
+
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+#page1 {
+  height: 70vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+#page1 h1 {
+  font-size: 7.5vw;
+  font-weight: 900;
+  position: relative;
+}
+#page1 h1::before {
+  /* content: "Cultural Events"; */
+  position: absolute;
+  color: #000;
+  top: -5px;
+  left: -5px;
+  -webkit-text-stroke: 1.5px #95c11e;
+  z-index: -1;
+}
+#page1 h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#page1 p {
+  font-size: 1.2vw;
+  font-weight: 500;
+  width: 40%;
+}
+#page2 {
+  min-height: 200vh;
+  width: 100%;
+  z-index: 10;
+}
+
+#scroller {
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: gilroy;
+  margin-right: 50px;
+  transition: all linear 0.3s;
+  color: #000;
+  -webkit-text-stroke: 2px #ffffff;
+}
+#scroller h4:hover {
+  color: #95c11e;
+  -webkit-text-stroke: 2px #95c11e;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+}
+
+.card {
+  width: calc(23.33% - 20px); 
+  height: 400px; 
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all ease 0.6s;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+}
+#card1 {
+  background-image: url(Assests/CulturalEvents.png);
+}
+#card2 {
+  background-image: url(Assests/singer1.png);
+}
+#card3 {
+  background-image: url(Assests/INSTA-POST-PHUKAN.png);
+}
+#card4 {
+  background-image: url(Assests/INSTA-POST-JERY.png);
+}
+#card5 {
+  background-image: url(Assests/singer2.png);
+}
+#card6 {
+  background-image: url(Assests/cricket.png);
+}
+#card7 {
+  background-image: url(Assests/SINGING-COMPETITION.png);
+}
+#card8 {
+  background-image: url(Assests/Actingcompetitions.jpg);
+}
+#card9 {
+  background-image: url(Assests/Actingcompetitions.jpg);
+}
+#card10 {
+  background-image: url(Assests/Actingcompetitions.jpg);
+  text-align: center;
+  width: 20%;
+  height: 500px;
+}
+
+.singer-section{
+  position: relative;
+}
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  z-index: -2; 
+}
+.video-background video {
+width: 100%;
+height: 50%;
+object-fit: cover;
+position: relative;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding: 20px;
+  padding-top: 100px;
+  opacity: 0;
+  transition: all ease 0.6s;
+}
+.overlay h4 {
+  color: #000;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+.overlay p {
+  color: #000;
+  font-size: 18px;
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+.card:hover {
+  transform: rotate3d(-1, 1, 0, 2deg);
+}
+
+#footer {
+  height: 20vh;
+  width: 100%;
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6.5vw;
+  padding: 0 100px;
+}
+#footer > img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+#f1 img {
+  height: 100px;
+}
+#f1,
+#f2,
+#f3,
+#f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 99;
+}
+#f2 a {
+  font-size: 15px;
+  color: #000;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+#f3 p {
+  font-size: 15px;
+  color: #000;
+  font-weight: 800;
+}
+
+#f4 a{
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  #cursor,
+  #cursor-blur {
+    display: none; 
+  }
+  video {
+    object-fit: cover; 
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; 
+  }
+#nav {
+    padding: 0 20px;
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    position: relative;
+    background-color: transparent;
+}
+#nav .nav-links{
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  align-items: center;
+  position: static;
+  height: auto;
+  gap: 0px;
+}
+#nav .nav-links a {
+  padding: 1rem; 
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+#nav img {
+  height: 8vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#nav h4 {
+  font-size: 2.5vw;
+  text-align: left;
+  width: 100%;
+}
+#nav .hamburger {
+  display: block; 
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  /* z-index: 1000; */
+}
+#nav .hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+#nav .nav-active {
+  display: flex;
+  flex-direction: column; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 998; 
+  width: fit-content; 
+}
+#nav  .nav-active a {
+  padding: 1rem;
+  text-align: center;
+}
+
+  #page1 {
+    height: auto;
+    padding: 20px;
+  }
+
+  #page1 h1 {
+    font-size: 10vw; /* Reduce font size */
+  }
+
+  #page1 h2 {
+    font-size: 5vw; /* Reduce font size */
+  }
+
+  #page1 p {
+    font-size: 4vw; /* Reduce font size */
+    width: 90%; /* Make paragraph full-width */
+  }
+
+  #scroller h4 {
+    font-size: 8vw; /* Adjust font size */
+    margin-right: 20px;
+  }
+
+  #cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 100px; /* Reduce gap */
+    padding: 0;
+  }
+
+  .card {
+    width: 60%; /* Make cards full-width */
+    height: 30vh;
+  }
+  #card10 {
+    width: 90%; /* Make cards full-width */
+    height: 300px;
+  }
+  .video-background video {
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    padding: 10px;
+  }
+
+  .overlay h4 {
+    font-size: 16px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  #footer {
+    flex-direction: column; /* Stack footer sections vertically */
+    gap: 10px; /* Reduce gap */
+    padding: 10px 0;
+    justify-content: center;
+    height: auto;
+    text-align: center;
+  }
+
+  #footer > img {
+    position: relative; /* Remove absolute positioning */
+    left: auto;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+  }
+  #f2 a, #f3 p, #f4 a {
+    text-align: center;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+  #f1 img {
+    height: 70px;
+    margin: 0 auto;
+    }
+    #f1, #f2, #f3, #f4 {
+      padding: 5px; /* add some padding */
+    }
+}
